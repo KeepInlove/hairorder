@@ -1,0 +1,210 @@
+2021-12-08 14:42:18.237 INFO  com.gxy.hairorder.service.UserServiceTest         :55   [32m                  [0;39m Starting UserServiceTest using Java 1.8.0_152 on guo with PID 9728 (started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 14:42:18.239 INFO  com.gxy.hairorder.service.UserServiceTest         :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 14:42:18.271 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 14:42:19.218 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:42:19.221 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 14:42:19.399 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 169 ms. Found 1 JPA repository interfaces.
+2021-12-08 14:42:19.421 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:42:19.423 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 14:42:19.521 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 14:42:19.522 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-12-08 14:42:19.669 WARN  org.mybatis.spring.mapper.ClassPathMapperScanner  :44   [32m                  [0;39m No MyBatis mapper was found in '[com.gxy.hairorder]' package. Please check your configuration.
+2021-12-08 14:42:20.269 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 14:42:21.328 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 14:42:21.400 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 14:42:21.514 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 14:42:21.703 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 14:42:21.856 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 14:42:22.601 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 14:42:22.613 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:42:23.399 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 14:42:24.881 INFO  com.gxy.hairorder.service.UserServiceTest         :61   [32m                  [0;39m Started UserServiceTest in 7.384 seconds (JVM running for 9.066)
+2021-12-08 14:42:25.265 INFO  com.gxy.hairorder.service.UserService             :46   [32m                  [0;39m 总数:3
+2021-12-08 14:42:25.265 INFO  com.gxy.hairorder.service.UserService             :47   [32m                  [0;39m 总页数:2
+2021-12-08 14:42:25.268 INFO  com.gxy.hairorder.service.UserServiceTest         :31   [32m                  [0;39m PageResp{total=3, list=[UserResp(userId=7350204384166914, phone=12345123456, sex=男, integral=0, balance=0, createTime=2021-12-08 13:37:29.0)]}
+2021-12-08 14:42:25.305 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:651  [32m                  [0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:42:25.309 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-12-08 14:42:25.319 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-12-08 14:45:01.424 INFO  com.gxy.hairorder.service.UserServiceTest         :55   [32m                  [0;39m Starting UserServiceTest using Java 1.8.0_152 on guo with PID 13936 (started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 14:45:01.426 INFO  com.gxy.hairorder.service.UserServiceTest         :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 14:45:01.432 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 14:45:02.486 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:45:02.489 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 14:45:02.714 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 213 ms. Found 1 JPA repository interfaces.
+2021-12-08 14:45:02.732 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:45:02.734 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 14:45:02.818 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 14:45:02.819 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 75 ms. Found 0 Redis repository interfaces.
+2021-12-08 14:45:03.676 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 14:45:04.790 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 14:45:04.861 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 14:45:05.002 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 14:45:05.185 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 14:45:05.343 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 14:45:06.110 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 14:45:06.121 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:45:06.888 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 14:45:08.646 INFO  com.gxy.hairorder.service.UserServiceTest         :61   [32m                  [0;39m Started UserServiceTest in 8.244 seconds (JVM running for 10.221)
+2021-12-08 14:45:09.339 INFO  com.gxy.hairorder.service.UserService             :46   [32m                  [0;39m 总数:3
+2021-12-08 14:45:09.340 INFO  com.gxy.hairorder.service.UserService             :47   [32m                  [0;39m 总页数:1
+2021-12-08 14:45:09.343 INFO  com.gxy.hairorder.service.UserServiceTest         :31   [32m                  [0;39m PageResp{total=3, list=[]}
+2021-12-08 14:45:09.398 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:651  [32m                  [0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:45:09.401 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-12-08 14:45:09.413 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-12-08 14:45:29.023 INFO  com.gxy.hairorder.service.UserServiceTest         :55   [32m                  [0;39m Starting UserServiceTest using Java 1.8.0_152 on guo with PID 8304 (started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 14:45:29.025 INFO  com.gxy.hairorder.service.UserServiceTest         :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 14:45:29.057 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 14:45:30.060 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:45:30.063 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 14:45:30.258 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 185 ms. Found 1 JPA repository interfaces.
+2021-12-08 14:45:30.282 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:45:30.283 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 14:45:30.395 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 14:45:30.396 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 101 ms. Found 0 Redis repository interfaces.
+2021-12-08 14:45:31.080 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 14:45:32.129 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 14:45:32.249 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 14:45:32.380 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 14:45:32.565 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 14:45:32.740 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 14:45:33.591 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 14:45:33.603 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:45:34.449 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 14:45:35.832 INFO  com.gxy.hairorder.service.UserServiceTest         :61   [32m                  [0;39m Started UserServiceTest in 7.532 seconds (JVM running for 8.995)
+2021-12-08 14:45:36.199 INFO  com.gxy.hairorder.service.UserService             :46   [32m                  [0;39m 总数:3
+2021-12-08 14:45:36.200 INFO  com.gxy.hairorder.service.UserService             :47   [32m                  [0;39m 总页数:1
+2021-12-08 14:45:36.211 INFO  com.gxy.hairorder.service.UserServiceTest         :31   [32m                  [0;39m PageResp{total=3, list=[UserResp(userId=7350204384166912, phone=12345123456, sex=男, integral=0, balance=0, createTime=2021-12-08 13:35:11.0), UserResp(userId=7350204384166913, phone=12345123456, sex=女, integral=0, balance=0, createTime=2021-12-08 13:36:25.0), UserResp(userId=7350204384166914, phone=12345123456, sex=男, integral=0, balance=0, createTime=2021-12-08 13:37:29.0)]}
+2021-12-08 14:45:36.266 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:651  [32m                  [0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:45:36.271 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-12-08 14:45:36.292 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-12-08 14:46:22.770 INFO  com.gxy.hairorder.service.UserServiceTest         :55   [32m                  [0;39m Starting UserServiceTest using Java 1.8.0_152 on guo with PID 4728 (started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 14:46:22.772 INFO  com.gxy.hairorder.service.UserServiceTest         :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 14:46:22.774 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 14:46:23.831 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:46:23.834 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 14:46:24.039 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 194 ms. Found 1 JPA repository interfaces.
+2021-12-08 14:46:24.060 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 14:46:24.061 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 14:46:24.152 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 14:46:24.153 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 82 ms. Found 0 Redis repository interfaces.
+2021-12-08 14:46:24.893 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 14:46:25.995 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 14:46:26.072 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 14:46:26.184 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 14:46:26.386 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 14:46:26.537 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 14:46:27.330 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 14:46:27.343 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:46:28.160 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 14:46:29.488 INFO  com.gxy.hairorder.service.UserServiceTest         :61   [32m                  [0;39m Started UserServiceTest in 7.47 seconds (JVM running for 9.18)
+2021-12-08 14:46:29.693 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:651  [32m                  [0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 14:46:29.698 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-12-08 14:46:29.719 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-12-08 15:05:18.718 INFO  com.gxy.hairorder.service.UserServiceTest         :55   [32m                  [0;39m Starting UserServiceTest using Java 1.8.0_152 on guo with PID 11420 (started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 15:05:18.720 INFO  com.gxy.hairorder.service.UserServiceTest         :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 15:05:18.738 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 15:05:20.442 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 15:05:20.444 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 15:05:20.636 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 183 ms. Found 1 JPA repository interfaces.
+2021-12-08 15:05:20.656 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 15:05:20.658 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 15:05:20.677 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 15:05:20.677 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2021-12-08 15:05:21.684 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 15:05:22.887 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 15:05:22.969 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 15:05:23.096 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 15:05:23.260 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 15:05:23.424 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 15:05:24.210 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 15:05:24.222 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 15:05:25.332 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 15:05:27.291 INFO  com.gxy.hairorder.service.UserServiceTest         :61   [32m                  [0;39m Started UserServiceTest in 9.27 seconds (JVM running for 10.709)
+2021-12-08 15:05:27.486 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:651  [32m                  [0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 15:05:27.490 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-12-08 15:05:27.504 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-12-08 15:05:54.222 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.2.0.Final
+2021-12-08 15:05:54.221 INFO  com.gxy.hairorder.HairorderApplication            :55   [32m                  [0;39m Starting HairorderApplication using Java 1.8.0_152 on guo with PID 1820 (E:\BsProject\code\hairorder\target\classes started by GUO in E:\BsProject\code\hairorder)
+2021-12-08 15:05:54.225 INFO  com.gxy.hairorder.HairorderApplication            :663  [32m                  [0;39m The following profiles are active: dev
+2021-12-08 15:05:54.305 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-08 15:05:54.306 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-08 15:05:55.142 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 15:05:55.143 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-08 15:05:55.204 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interfaces.
+2021-12-08 15:05:55.218 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :262  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-12-08 15:05:55.220 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :132  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-12-08 15:05:55.233 INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport :349  [32m                  [0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.gxy.hairorder.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-12-08 15:05:55.234 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :201  [32m                  [0;39m Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2021-12-08 15:05:56.548 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8880 (http)
+2021-12-08 15:05:56.558 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8880"]
+2021-12-08 15:05:56.559 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-12-08 15:05:56.560 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-12-08 15:05:56.562 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2021-12-08 15:05:56.562 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-12-08 15:05:56.563 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2021-12-08 15:05:56.564 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-12-08 15:05:56.567 INFO  org.apache.catalina.core.AprLifecycleListener     :173  [32m                  [0;39m OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-12-08 15:05:56.703 INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-12-08 15:05:56.703 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :290  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2397 ms
+2021-12-08 15:05:56.839 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-12-08 15:05:57.598 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-12-08 15:05:57.645 INFO  org.hibernate.jpa.internal.util.LogHelper         :31   [32m                  [0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-08 15:05:57.730 INFO  org.hibernate.Version                             :44   [32m                  [0;39m HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-08 15:05:57.885 INFO  org.hibernate.annotations.common.Version          :56   [32m                  [0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-08 15:05:58.334 INFO  org.hibernate.dialect.Dialect                     :175  [32m                  [0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-08 15:05:58.937 INFO  o.h.e.t.jta.platform.internal.JtaPlatformInitiator:52   [32m                  [0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-08 15:05:58.949 INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean:437  [32m                  [0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 15:05:59.435 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219  [32m                  [0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-08 15:06:00.529 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-12-08 15:06:00.552 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8880"]
+2021-12-08 15:06:00.573 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8880 (http) with context path '/api'
+2021-12-08 15:06:00.584 INFO  com.gxy.hairorder.HairorderApplication            :61   [32m                  [0;39m Started HairorderApplication in 7.154 seconds (JVM running for 8.955)
+2021-12-08 15:06:00.588 INFO  com.gxy.hairorder.HairorderApplication            :13   [32m                  [0;39m 数据提供启动成功！！地址: 	http://127.0.0.1:8880
+2021-12-08 15:06:08.696 INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-08 15:06:08.696 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-12-08 15:06:08.698 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 2 ms
+2021-12-08 15:06:08.863 INFO  com.gxy.hairorder.aspect.LogAspect                :59   [32m7730094109377536  [0;39m ------------- 开始 -------------
+2021-12-08 15:06:08.864 INFO  com.gxy.hairorder.aspect.LogAspect                :60   [32m7730094109377536  [0;39m 请求地址: http://localhost:8880/api/user/list GET
+2021-12-08 15:06:08.864 INFO  com.gxy.hairorder.aspect.LogAspect                :61   [32m7730094109377536  [0;39m 类名方法: com.gxy.hairorder.controller.UserController.userList
+2021-12-08 15:06:08.864 INFO  com.gxy.hairorder.aspect.LogAspect                :62   [32m7730094109377536  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-12-08 15:06:08.945 INFO  com.gxy.hairorder.aspect.LogAspect                :85   [32m7730094109377536  [0;39m 请求参数: [{"page":1,"size":2}]
+2021-12-08 15:06:09.110 INFO  com.gxy.hairorder.service.UserService             :46   [32m7730094109377536  [0;39m 总数:3
+2021-12-08 15:06:09.110 INFO  com.gxy.hairorder.service.UserService             :47   [32m7730094109377536  [0;39m 总页数:2
+2021-12-08 15:06:09.125 INFO  com.gxy.hairorder.aspect.LogAspect                :97   [32m7730094109377536  [0;39m 返回结果: {"content":{"list":[{"balance":0,"createTime":1638941849000,"integral":0,"phone":"12345123456","sex":"男","userId":7350204384166914}],"total":3},"success":true}
+2021-12-08 15:06:09.126 INFO  com.gxy.hairorder.aspect.LogAspect                :98   [32m7730094109377536  [0;39m ------------- 结束 耗时：265 ms -------------
+2021-12-08 15:30:21.204 INFO  com.gxy.hairorder.aspect.LogAspect                :59   [32m7730474832118784  [0;39m ------------- 开始 -------------
+2021-12-08 15:30:21.204 INFO  com.gxy.hairorder.aspect.LogAspect                :60   [32m7730474832118784  [0;39m 请求地址: http://localhost:8880/api/user/list GET
+2021-12-08 15:30:21.204 INFO  com.gxy.hairorder.aspect.LogAspect                :61   [32m7730474832118784  [0;39m 类名方法: com.gxy.hairorder.controller.UserController.userList
+2021-12-08 15:30:21.205 INFO  com.gxy.hairorder.aspect.LogAspect                :62   [32m7730474832118784  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-12-08 15:30:21.205 INFO  com.gxy.hairorder.aspect.LogAspect                :85   [32m7730474832118784  [0;39m 请求参数: [{"page":1,"size":5}]
+2021-12-08 15:30:21.219 INFO  com.gxy.hairorder.service.UserService             :46   [32m7730474832118784  [0;39m 总数:3
+2021-12-08 15:30:21.219 INFO  com.gxy.hairorder.service.UserService             :47   [32m7730474832118784  [0;39m 总页数:1
+2021-12-08 15:30:21.219 INFO  com.gxy.hairorder.aspect.LogAspect                :97   [32m7730474832118784  [0;39m 返回结果: {"content":{"list":[],"total":3},"success":true}
+2021-12-08 15:30:21.220 INFO  com.gxy.hairorder.aspect.LogAspect                :98   [32m7730474832118784  [0;39m ------------- 结束 耗时：16 ms -------------
+2021-12-08 15:30:27.391 INFO  com.gxy.hairorder.aspect.LogAspect                :59   [32m7730476454003712  [0;39m ------------- 开始 -------------
+2021-12-08 15:30:27.391 INFO  com.gxy.hairorder.aspect.LogAspect                :60   [32m7730476454003712  [0;39m 请求地址: http://localhost:8880/api/user/list GET
+2021-12-08 15:30:27.391 INFO  com.gxy.hairorder.aspect.LogAspect                :61   [32m7730476454003712  [0;39m 类名方法: com.gxy.hairorder.controller.UserController.userList
+2021-12-08 15:30:27.392 INFO  com.gxy.hairorder.aspect.LogAspect                :62   [32m7730476454003712  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-12-08 15:30:27.392 INFO  com.gxy.hairorder.aspect.LogAspect                :85   [32m7730476454003712  [0;39m 请求参数: [{"page":0,"size":5}]
+2021-12-08 15:30:27.396 INFO  com.gxy.hairorder.service.UserService             :46   [32m7730476454003712  [0;39m 总数:3
+2021-12-08 15:30:27.396 INFO  com.gxy.hairorder.service.UserService             :47   [32m7730476454003712  [0;39m 总页数:1
+2021-12-08 15:30:27.397 INFO  com.gxy.hairorder.aspect.LogAspect                :97   [32m7730476454003712  [0;39m 返回结果: {"content":{"list":[{"balance":0,"createTime":1638941711000,"integral":0,"phone":"12345123456","sex":"男","userId":7350204384166912},{"balance":0,"createTime":1638941785000,"integral":0,"phone":"12345123456","sex":"女","userId":7350204384166913},{"balance":0,"createTime":1638941849000,"integral":0,"phone":"12345123456","sex":"男","userId":7350204384166914}],"total":3},"success":true}
+2021-12-08 15:30:27.397 INFO  com.gxy.hairorder.aspect.LogAspect                :98   [32m7730476454003712  [0;39m ------------- 结束 耗时：6 ms -------------
+2021-12-08 15:30:36.106 INFO  com.gxy.hairorder.aspect.LogAspect                :59   [32m7730478738588672  [0;39m ------------- 开始 -------------
+2021-12-08 15:30:36.106 INFO  com.gxy.hairorder.aspect.LogAspect                :60   [32m7730478738588672  [0;39m 请求地址: http://localhost:8880/api/user/list GET
+2021-12-08 15:30:36.107 INFO  com.gxy.hairorder.aspect.LogAspect                :61   [32m7730478738588672  [0;39m 类名方法: com.gxy.hairorder.controller.UserController.userList
+2021-12-08 15:30:36.107 INFO  com.gxy.hairorder.aspect.LogAspect                :62   [32m7730478738588672  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-12-08 15:30:36.107 INFO  com.gxy.hairorder.aspect.LogAspect                :85   [32m7730478738588672  [0;39m 请求参数: [{"page":0,"size":2}]
+2021-12-08 15:30:36.113 INFO  com.gxy.hairorder.service.UserService             :46   [32m7730478738588672  [0;39m 总数:3
+2021-12-08 15:30:36.113 INFO  com.gxy.hairorder.service.UserService             :47   [32m7730478738588672  [0;39m 总页数:2
+2021-12-08 15:30:36.114 INFO  com.gxy.hairorder.aspect.LogAspect                :97   [32m7730478738588672  [0;39m 返回结果: {"content":{"list":[{"balance":0,"createTime":1638941711000,"integral":0,"phone":"12345123456","sex":"男","userId":7350204384166912},{"balance":0,"createTime":1638941785000,"integral":0,"phone":"12345123456","sex":"女","userId":7350204384166913}],"total":3},"success":true}
+2021-12-08 15:30:36.114 INFO  com.gxy.hairorder.aspect.LogAspect                :98   [32m7730478738588672  [0;39m ------------- 结束 耗时：8 ms -------------
+2021-12-08 15:33:54.021 INFO  com.gxy.hairorder.aspect.LogAspect                :59   [32m7730530620818432  [0;39m ------------- 开始 -------------
+2021-12-08 15:33:54.021 INFO  com.gxy.hairorder.aspect.LogAspect                :60   [32m7730530620818432  [0;39m 请求地址: http://localhost:8880/api/user/list GET
+2021-12-08 15:33:54.022 INFO  com.gxy.hairorder.aspect.LogAspect                :61   [32m7730530620818432  [0;39m 类名方法: com.gxy.hairorder.controller.UserController.userList
+2021-12-08 15:33:54.022 INFO  com.gxy.hairorder.aspect.LogAspect                :62   [32m7730530620818432  [0;39m 远程地址: 0:0:0:0:0:0:0:1
+2021-12-08 15:33:54.022 INFO  com.gxy.hairorder.aspect.LogAspect                :85   [32m7730530620818432  [0;39m 请求参数: [{"page":0,"size":2}]
+2021-12-08 15:33:54.028 INFO  com.gxy.hairorder.service.UserService             :46   [32m7730530620818432  [0;39m 总数:3
+2021-12-08 15:33:54.028 INFO  com.gxy.hairorder.service.UserService             :47   [32m7730530620818432  [0;39m 总页数:2
+2021-12-08 15:33:54.029 INFO  com.gxy.hairorder.aspect.LogAspect                :97   [32m7730530620818432  [0;39m 返回结果: {"content":{"list":[{"balance":0,"createTime":1638941711000,"integral":0,"phone":"12345123456","sex":"男","userId":7350204384166912},{"balance":0,"createTime":1638941785000,"integral":0,"phone":"12345123456","sex":"女","userId":7350204384166913}],"total":3},"success":true}
+2021-12-08 15:33:54.029 INFO  com.gxy.hairorder.aspect.LogAspect                :98   [32m7730530620818432  [0;39m ------------- 结束 耗时：8 ms -------------
