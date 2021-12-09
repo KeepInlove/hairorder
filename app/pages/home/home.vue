@@ -1,7 +1,11 @@
 <template>
 	<view>
-		首页
+			<u-button type="error">错误按钮</u-button>
+			<u-button type="success">成功按钮</u-button>
+			<u-button type="info">默认按钮</u-button>
+			<u-button type="primary">默认按钮</u-button>
 	</view>
+		
 </template>
 
 <script>
@@ -18,5 +22,4 @@
 </script>
 
 <style>
-
 </style>
