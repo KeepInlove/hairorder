@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @author GUO
  * @Classname PageResp
- * @Description TODO
+ * @Description 响应分页
  * @Date 2021/12/8 13:12
  */
 public class PageResp<T> {

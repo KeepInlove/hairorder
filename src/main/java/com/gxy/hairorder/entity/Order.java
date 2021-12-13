@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @author GUO
  * @Classname Order
- * @Description TODO
+ * @Description 预约单
  * @Date 2021/12/8 19:29
  */
 @Data
@@ -24,6 +24,9 @@ public class Order {
     private Long barberId;
     private BigDecimal price;
     private Date orderDate;
+    /*订单状态,默认新下单
+    private Integer orderStatus = OrderStatusEnum.NEW.getCode();
+   */
     private Integer orderStatus;
     private String orderInfo;
     private String phone;

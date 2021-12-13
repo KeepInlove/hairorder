@@ -1,11 +1,13 @@
 HELP.md
 target/
+log/
+app/unpackage/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 
-unpackage/
+
 ### STS ###
 .apt_generated
 .classpath
