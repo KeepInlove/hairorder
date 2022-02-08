@@ -1,0 +1,5 @@
+2021-12-11 16:11:36.946 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  :142  [32m                  [0;39m Field 'barber_type_id' doesn't have a default value
+2021-12-11 16:12:51.638 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  :142  [32m                  [0;39m Field 'barber_type_id' doesn't have a default value
+2021-12-11 16:21:27.914 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  :142  [32m                  [0;39m Field 'barber_type_id' doesn't have a default value
+2021-12-11 16:22:29.276 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  :142  [32m                  [0;39m Field 'barber_type_id' doesn't have a default value
+2021-12-11 16:31:07.139 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  :142  [32m                  [0;39m Field 'barber_type_id' doesn't have a default value

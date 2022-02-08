@@ -1,0 +1,2 @@
+2022-02-08 23:01:51.867 ERROR o.a.c.c.C.[.[localhost].[/api].[dispatcherServlet]:175  [32m9141829437506560  [0;39m Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception [Request processing failed; nested exception is com.gxy.hairorder.exception.BusinessException: 用户名不存在或密码错误] with root cause
+com.gxy.hairorder.exception.BusinessException: 用户名不存在或密码错误

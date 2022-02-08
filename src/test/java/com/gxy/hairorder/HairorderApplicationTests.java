@@ -10,14 +10,17 @@ class HairorderApplicationTests {
 
     @Test
     void contextLoads() {
-        log.debug("debug...");
-        log.info("info...");
-        String name="guo";
-        String password="123456";
-        log.info("name:"+name+"password:"+password);
-        log.info("-----");
-        log.info("name:{},password:{}",name,password);
-        log.error("error...");
+//        log.debug("debug...");
+//        log.info("info...");
+//        String name="guo";
+//        String password="123456";
+//        log.info("name:"+name+"password:"+password);
+//        log.info("-----");
+//        log.info("name:{},password:{}",name,password);
+//        log.error("error...");
+        int x=1;
+       int a= x++>1 ? ++x: --x;
+       log.info(String.valueOf(a));
     }
 
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="login_container">
         <div class="login_box">
-            <el-card style="margin: auto;text-align:center;font-size: 20px;font-family:SimSun;color: cornflowerblue;opacity:90%">
+            <el-card style="margin: auto;text-align:center;font-size: 36px;font-family:SimSun;opacity:90%">
                 客户管理系统
             </el-card>
             <el-form ref="loginRef" class="login_form" :model="loginForm" :rules="loginFormRules" label-width="0px">
@@ -38,14 +38,18 @@
 
 <script>
     export default{
-        name: 'Login',
+        name: 'login',
         data() {
             return {
+                loginUser: {
+                    username: '',
+                    password: '',
+                },
                 //这是登录表单的数据绑定对象
                 loginForm: {
-                    user: '',
-                    password: '',
-                    seccode: ''
+                    user: 'test',
+                    password: 'test',
+                    seccode: '',
                 },
                 ip: '',
                 checkCode: '',
@@ -81,10 +85,40 @@
             //重置方法
             resetForm() {
                 // console.log(this);
+
                 this.$refs.loginRef.resetFields()
             },
             //    登录
             login() {
+                // console.log(this.loginForm);
+                // console.log(this.checkCode);
+                if (this.loginForm.seccode != this.checkCode) {
+                    this.$message({
+                        message: "验证码错误，注意大写字母",
+                        type: "warning"
+                    });
+                    this.createCode();
+                    return false;
+                }
+                this.loginUser.username=this.loginForm.user;
+                this.loginUser.password=this.loginForm.password;
+                console.log(this.loginUser.password)
+                // const thas=this;
+                this.$refs.loginRef.validate(async valid =>{
+                    if (!valid)return;
+                    this.loginUser.password= this.hexMd5(this.loginUser.password+this.KEY);
+                   console.log(this.loginUser)
+                    const {data: res}=await this.$axios.post('/api/login/sys',this.loginUser);
+                    console.log(res);
+                    if (!res.success) return this.$message.error("用户名或密码错误");
+                    this.$message.success("登录成功");
+                    // console.log(window.sessionStorage.getItem('token'));
+                    // this.$router.push('/sys/home');
+                })
+                // this.$axios.post('/api/login/sys',).then((res)=>{
+                //     console.log(res);
+                //
+                // });
                 console.log('登录')
             }
 
@@ -94,21 +128,24 @@
 </script>
 
 <style scoped lang="less">
+    .el-form-item__content {
+        line-height: 50px;
+    }
     .login_container {
-        background-image: url('../../assets/img/bj.png');
+        /*background-image: url('../../assets/img/bj.png');*/
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        background-color: cadetblue;
+        background-color: #283443;
         width: 100%;
         height: 100%;
     }
 
     .login_box {
         margin: 0 auto;
-        width: 400px;
-        height: 380px;
-        background-color: #fff;
+        width: 500px;
+        height: 400px;
+        background-color: #ffffff;
         border-radius: 3px;
         position: absolute; /*绝对定位*/
         left: 50%;

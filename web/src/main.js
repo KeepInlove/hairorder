@@ -6,7 +6,10 @@ import axios from 'axios'
 import './icons';
 import router from './router'
 import './assets/css/global.css'
-
+// import hexMd5 from '../public/js/md5.js'
+// eslint-disable-next-line no-unused-vars
+import {hexMd5} from '../public/js/md5.js'
+Vue.prototype.hexMd5=hexMd5;
 Vue.config.productionTip = false;
 Vue.prototype.$axios=axios;
 Vue.use(ElementUI);
