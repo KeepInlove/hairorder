@@ -5,7 +5,7 @@ import com.gxy.hairorder.exception.BusinessException;
 import com.gxy.hairorder.exception.BusinessExceptionCode;
 import com.gxy.hairorder.repository.SysRepository;
 import com.gxy.hairorder.req.SysLoginReq;
-import com.gxy.hairorder.resp.SysLoginResp;
+import com.gxy.hairorder.resp.UserLoginResp;
 import com.gxy.hairorder.utils.CopyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class SysService {
     private SysRepository sysRepository;
 
 
-    public SysLoginResp login(SysLoginReq req) {
+    public UserLoginResp login(SysLoginReq req) {
         Sys sys = sysRepository.findByUsernameAndPassword(req.getUsername(), req.getPassword());
         if (ObjectUtils.isEmpty(sys)){
             //用户名不存在
@@ -34,7 +34,7 @@ public class SysService {
         }else {
             if (sys.getPassword().equals(req.getPassword())){
                 //登录成功
-                SysLoginResp sysLoginResp= CopyUtil.copy(sys,SysLoginResp.class);
+                UserLoginResp sysLoginResp= CopyUtil.copy(sys, UserLoginResp.class);
                 return sysLoginResp;
             }else {
                 //密码错误

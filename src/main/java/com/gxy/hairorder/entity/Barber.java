@@ -2,8 +2,11 @@ package com.gxy.hairorder.entity;
 
 import com.gxy.hairorder.enums.BarberStatusEnum;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
  * @author GUO
@@ -16,13 +19,16 @@ import java.util.Date;
 @Data
 public class Barber {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @CreatedBy
+    @Column(name = "barber_id")
     private Long barberId;
     private String barberName;
-    private String des;
+    private String barberDes;
     private Long barberTypeId;
-    //理发师工作状态:默认1工作,2休息
-    private Integer barberStatus= BarberStatusEnum.WORK.getCode();
+    private BigDecimal barberPrice;
+    //理发师工作状态:默认1工作,0休息
+    private Boolean barberStatus;
     private String barberImg;
+    private Integer orderCount;
     private Date createTime;
 }

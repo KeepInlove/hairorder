@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.DigestUtils;
 
+import java.sql.Date;
+
 /**
  * @author GUO
  * @Classname UserServiceTest
@@ -32,10 +34,15 @@ public class UserServiceTest {
         log.info(list.toString());
     }
     @Test
+    public void save() {
+
+    }
+    @Test
     public void md5(){
-        String s="85a86bea0cff860c343e5c9b83381e2e";
-        String s1 = DigestUtils.md5DigestAsHex(s.getBytes());
-        log.info(s1);
+//        String s="85a86bea0cff860c343e5c9b83381e2e";
+//        String s1 = DigestUtils.md5DigestAsHex(s.getBytes());
+//        log.info(s1);
+//        Date date = new Date();
 
     }
 }

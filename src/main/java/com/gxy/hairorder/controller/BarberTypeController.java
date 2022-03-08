@@ -1,12 +1,9 @@
 package com.gxy.hairorder.controller;
 
-import com.gxy.hairorder.entity.BarberType;
+
 import com.gxy.hairorder.req.BarberTypeReq;
-import com.gxy.hairorder.req.UserReq;
 import com.gxy.hairorder.resp.BarberTypeResp;
 import com.gxy.hairorder.resp.CommonResp;
-import com.gxy.hairorder.resp.PageResp;
-import com.gxy.hairorder.resp.UserResp;
 import com.gxy.hairorder.service.BarberTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +35,15 @@ public class BarberTypeController {
     @PostMapping("/save")
     public CommonResp barberTypeSave(@Valid @RequestBody BarberTypeReq barberTypeReq){
         CommonResp resp=new CommonResp();
+        resp.setMessage("新增或修改理发师类型");
         barberTypeService.save(barberTypeReq);
+        return resp;
+    }
+    @DeleteMapping("/delete/{barberTypeId}")
+    public CommonResp barberTypeDel(@PathVariable Long barberTypeId){
+        CommonResp resp=new CommonResp();
+        resp.setMessage("删除理发师类型");
+        barberTypeService.del(barberTypeId);
         return resp;
     }
 }

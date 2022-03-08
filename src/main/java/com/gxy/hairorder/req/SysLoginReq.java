@@ -13,4 +13,5 @@ public class SysLoginReq {
 
     private String username;
     private String password;
+
 }

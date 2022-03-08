@@ -14,3 +14,8 @@ html,body,#app{
 .el-table th.gutter{
     display: table-cell!important;
 }
+.el-breadcrumb{
+    margin-top: 6px;
+    font-size: 16px;
+    padding: 5px;
+}

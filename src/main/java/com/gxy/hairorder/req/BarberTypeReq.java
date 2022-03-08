@@ -2,8 +2,6 @@ package com.gxy.hairorder.req;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * @author GUO
@@ -15,5 +13,5 @@ import java.util.Date;
 public class BarberTypeReq {
     private Long barberTypeId;
     private String barberTypeName;
-    private BigDecimal barberPrice;
+//    private BigDecimal barberPrice;
 }

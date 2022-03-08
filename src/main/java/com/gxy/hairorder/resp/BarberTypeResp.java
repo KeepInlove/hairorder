@@ -3,6 +3,7 @@ package com.gxy.hairorder.resp;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author GUO
@@ -14,5 +15,6 @@ import java.math.BigDecimal;
 public class BarberTypeResp {
     private Long barberTypeId;
     private String barberTypeName;
-    private BigDecimal barberPrice;
+    private  Integer count;
+    private Date createTime;
 }

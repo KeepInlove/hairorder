@@ -1,3 +1,10 @@
+
+
+upload:
+#  Nginx 文件上传路径为：F:/usr/local/upload/
+  url: http://127.0.0.1:8089/
+#  最终文件的访问路径：http://127.0.0.1:8089/53CE765D2770486AB51EDFF525AC53E8bj.png
+  path: E:/nginx/local/upload/
 # 端口号
 server:
   port: 8880
@@ -13,6 +20,8 @@ spring:
   jpa:
     show-sql: true
 #    redis配置
+
   redis:
     host: 127.0.0.1
     port: 6379
+    timeout: 500

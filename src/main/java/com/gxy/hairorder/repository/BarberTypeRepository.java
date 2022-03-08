@@ -11,6 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Date 2021/12/8 19:48
  */
 public interface BarberTypeRepository extends JpaRepository<BarberType,Long> {
-    //按理发师id查找
     BarberType findByBarberTypeId(Long barberTypeId);
 }

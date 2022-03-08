@@ -1,12 +1,12 @@
 package com.gxy.hairorder.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
+
 import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  * @author GUO
@@ -24,7 +24,7 @@ public class BarberType {
     @Column(name = "barber_type_id")
     private Long barberTypeId;
     private String barberTypeName;
-    private BigDecimal barberPrice;
+//    private BigDecimal barberPrice;
     private Date createTime;
 
 }

@@ -3,8 +3,7 @@ package com.gxy.hairorder.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * @author GUO
@@ -19,10 +18,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+    private String name;
     private String password;
     private String phone;
     private String sex;
     private int integral;
-    private BigDecimal balance;
     private Date createTime;
 }

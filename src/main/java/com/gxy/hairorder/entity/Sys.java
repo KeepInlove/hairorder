@@ -20,5 +20,6 @@ public class Sys {
     private Long sysId;
     private String password;
     private String username;
+    private String name;
     private Date createTime;
 }

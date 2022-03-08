@@ -26,10 +26,10 @@ public class BarberTypeServiceTest {
     @Test
     public void save() {
         BarberTypeReq barberTypeReq=new BarberTypeReq();
-        barberTypeReq.setBarberTypeId(850090465346560l);
-        BigDecimal price = BigDecimal.valueOf(30.00);
-        barberTypeReq.setBarberPrice(price);
-        barberTypeReq.setBarberTypeName("私人理发师");
+//        barberTypeReq.setBarberTypeId(850090465346522l);
+//        BigDecimal price = BigDecimal.valueOf(30.00);
+//        barberTypeReq.setBarberPrice(price);
+        barberTypeReq.setBarberTypeName("理发师");
         barberTypeService.save(barberTypeReq);
     }
     @Test

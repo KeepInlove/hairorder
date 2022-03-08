@@ -112,9 +112,19 @@
                     console.log(res);
                     if (!res.success) return this.$message.error("用户名或密码错误");
                     this.$message.success("登录成功");
+                   // this.$store.user("setUser", res.data.content);
+                    this.$store.commit("set_token", res.content.token);
+                    this.$store.commit("setUserInfo", res.content);
+                    setTimeout(() => {
+                        // 此时要判断/login后面的参数，若无参数，进入主页；
+                        this.$router.push("/home");
+                        // 若有参数则参数为未有权限的那个路由，跳转到那个路由
+                        // this.$router.push(***); -- 具体要自己在这实现
+                    }, 100);
                     // console.log(window.sessionStorage.getItem('token'));
                     // this.$router.push('/sys/home');
-                })
+                });
+
                 // this.$axios.post('/api/login/sys',).then((res)=>{
                 //     console.log(res);
                 //
