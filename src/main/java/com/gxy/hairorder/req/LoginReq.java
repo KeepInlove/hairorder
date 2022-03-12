@@ -9,9 +9,11 @@ import lombok.Data;
  * @Date 2022/2/8 20:57
  */
 @Data
-public class SysLoginReq {
-
+public class LoginReq {
     private String username;
     private String password;
+    private String phone;
+    private String sex;
+    private String code;
 
 }

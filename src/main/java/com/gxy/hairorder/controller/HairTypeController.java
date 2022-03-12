@@ -24,6 +24,7 @@ public class HairTypeController {
     @Autowired
     private HairTypeService hairTypeService;
 
+
     @GetMapping("/list")
     public CommonResp hairTypeList(){
         CommonResp resp=new CommonResp();

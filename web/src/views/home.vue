@@ -25,14 +25,14 @@
                         </el-menu-item>
                         <el-menu-item index="order">
                             <template slot="title">
-                                <i class="el-icon-time"></i>
+                                <i class="el-icon-shopping-cart-2"></i>
                                 <span>预约订单</span>
                             </template>
                         </el-menu-item>
                     </el-submenu>
                     <el-submenu index="2">
                         <template slot="title">
-                            <i class="el-icon-s-check"></i>
+                            <i class="el-icon-date"></i>
                             <span>项目管理</span>
                         </template>
                         <el-menu-item index="hairList">
@@ -41,12 +41,19 @@
                                 <span>项目列表</span>
                             </template>
                         </el-menu-item>
+                      <el-menu-item index="hairAdd">
+                        <template slot="title">
+                          <i class="el-icon-edit-outline"></i>
+                          <span>新增项目</span>
+                        </template>
+                      </el-menu-item>
                         <el-menu-item index="hairType">
                             <template slot="title">
                                 <i class="el-icon-s-check"></i>
-                                <span>项目列表</span>
+                                <span>项目类型</span>
                             </template>
                         </el-menu-item>
+
                     </el-submenu>
                     <el-submenu index="3">
                         <template slot="title">
@@ -78,7 +85,8 @@
                 <el-header height="54px">
                     <div>
                         <div class="user-logout">
-                            <span  class="user">欢迎: {{name }}</span><el-button type="info" plain style="font-size: 15px">退出</el-button>
+                            <span  class="user">欢迎: {{name }}</span>
+                          <el-button type="info" plain style="font-size: 15px" @click="logout">退出</el-button>
                         </div>
                     </div>
                 </el-header>
@@ -97,10 +105,14 @@
             }
         },
         mounted() {
-            const user=this.$store.getters.get_user;
+          const user=this.$store.getters.get_user;
            this.name=user.name;
 
         },
+      methods:{
+        logout(){
+        }
+      }
     }
 </script>
 

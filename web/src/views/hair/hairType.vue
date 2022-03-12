@@ -13,7 +13,7 @@
                 <el-table :data="typeList"  border>
                     <el-table-column type="index" label="#"></el-table-column>
                     <el-table-column prop="hairTypeName" width="300px"  label="理发师类型"></el-table-column>
-                    <el-table-column prop="count"  width="200px"  label="人员数量"></el-table-column>
+                    <el-table-column prop="count"  width="200px"  label="项目数量"></el-table-column>
                     <el-table-column prop="createTime" width="250px" sortable label="创建时间"></el-table-column>
                     <el-table-column label="Action">
                         <template slot-scope="scope">

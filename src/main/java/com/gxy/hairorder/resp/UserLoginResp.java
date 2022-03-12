@@ -12,12 +12,9 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public class UserLoginResp {
-    private Long sysId;
+    private Long id;
     @NotNull(message = "【用户名】不能为空")
     private String username;
-
-    @NotNull(message = "【昵称】不能为空")
     private String name;
-
     private String token;
 }

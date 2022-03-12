@@ -1,7 +1,5 @@
-
-
 upload:
-#  Nginx 文件上传路径为：F:/usr/local/upload/
+#  Nginx 文件上传路径为：E:/nginx/local/upload/
   url: http://127.0.0.1:8089/
 #  最终文件的访问路径：http://127.0.0.1:8089/53CE765D2770486AB51EDFF525AC53E8bj.png
   path: E:/nginx/local/upload/
@@ -14,7 +12,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/haircut?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/hairorder?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai
     username: root
     password: root
   jpa:
@@ -25,3 +23,8 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout: 500
+SSM:
+  appid: 1400602862
+  appkey: "f44bfe9a1f1dc1a391cd590de5773c95"
+  smsSign: "春波影照"
+  templateId: 1221073

@@ -73,11 +73,10 @@
                 }
             }
     },
-
         mounted(){
             this.getBarberType()
         },
-    methods: {
+        methods: {
         // 监听图片上传成功事件
         handleSuccess(response) {
             //返回的对象

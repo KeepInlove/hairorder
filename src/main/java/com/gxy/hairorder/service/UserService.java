@@ -12,10 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -52,4 +52,24 @@ public class UserService {
         pageResp.setList(respList);
         return pageResp;
     }
+
+   public UserResp findByPhone(String phone){
+       User user = userRepository.findByPhone(phone);
+       if (ObjectUtils.isEmpty(user)){
+          return null;
+       }else {
+           UserResp userResp = CopyUtil.copy(user, UserResp.class);
+           return userResp;
+       }
+   }
+   public void saveUser(String phone){
+        User user=new User();
+        user.setId(snowFlake.nextId());
+        user.setPhone(phone);
+        user.setIntegral(0);
+        user.setSex("女");
+        user.setCreateTime(new Date(System.currentTimeMillis()));
+        user.setName(phone);
+        userRepository.save(user);
+   }
 }

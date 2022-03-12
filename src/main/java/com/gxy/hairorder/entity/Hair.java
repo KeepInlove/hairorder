@@ -17,7 +17,7 @@ import java.sql.Date;
  * @Date 2022/3/5 16:04
  */
 @Entity
-@Table(name = "t_hairs")
+@Table(name = "t_hair")
 @Data
 public class Hair {
     @Id

@@ -2,7 +2,6 @@ package com.gxy.hairorder.resp;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -13,11 +12,10 @@ import java.sql.Date;
  */
 @Data
 public class UserResp {
-    private Long userId;
+    private Long id;
     private String name;
     private String phone;
     private String sex;
     private int integral;
-//    private BigDecimal balance;
     private Date createTime;
 }

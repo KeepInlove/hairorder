@@ -22,5 +22,4 @@ class HairorderApplicationTests {
        int a= x++>1 ? ++x: --x;
        log.info(String.valueOf(a));
     }
-
 }

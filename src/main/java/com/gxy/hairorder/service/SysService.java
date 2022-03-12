@@ -4,7 +4,7 @@ import com.gxy.hairorder.entity.Sys;
 import com.gxy.hairorder.exception.BusinessException;
 import com.gxy.hairorder.exception.BusinessExceptionCode;
 import com.gxy.hairorder.repository.SysRepository;
-import com.gxy.hairorder.req.SysLoginReq;
+import com.gxy.hairorder.req.LoginReq;
 import com.gxy.hairorder.resp.UserLoginResp;
 import com.gxy.hairorder.utils.CopyUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class SysService {
     private SysRepository sysRepository;
 
 
-    public UserLoginResp login(SysLoginReq req) {
+    public UserLoginResp login(LoginReq req) {
         Sys sys = sysRepository.findByUsernameAndPassword(req.getUsername(), req.getPassword());
         if (ObjectUtils.isEmpty(sys)){
             //用户名不存在

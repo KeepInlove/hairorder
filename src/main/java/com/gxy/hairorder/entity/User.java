@@ -1,6 +1,7 @@
 package com.gxy.hairorder.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -16,8 +17,9 @@ import java.sql.Date;
 @Table(name = "t_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    @CreatedBy
+    @Column(name = "user_id")
+    private Long id;
     private String name;
     private String password;
     private String phone;

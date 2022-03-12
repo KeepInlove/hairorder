@@ -17,7 +17,8 @@ import java.util.Date;
 public class Sys {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sysId;
+    @Column(name = "sys_id")
+    private Long id;
     private String password;
     private String username;
     private String name;

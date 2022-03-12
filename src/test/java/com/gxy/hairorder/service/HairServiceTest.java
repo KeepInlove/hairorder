@@ -1,12 +1,7 @@
 package com.gxy.hairorder.service;
 
-import com.gxy.hairorder.entity.Hair;
 import com.gxy.hairorder.form.HairForm;
-import com.gxy.hairorder.req.BarberReq;
-import com.gxy.hairorder.req.HairReq;
-import com.gxy.hairorder.resp.BarberResp;
 import com.gxy.hairorder.resp.HairResp;
-import com.gxy.hairorder.resp.PageResp;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +36,10 @@ class HairServiceTest {
     @Test
    public void save() {
         HairForm hairForm=new HairForm();
-        hairForm.setHairName("服务");
-        hairForm.setHairTypeId(1l);
-        hairForm.setHairDes("一条龙");
-        hairForm.setBarberTypeId(7799412300465152l);
+        hairForm.setHairName("测试5");
+        hairForm.setHairTypeId(9836171155751936l);
+        hairForm.setHairDes("测试5");
+        hairForm.setBarberTypeId(9797083173766144l);
         hairForm.setHairPrice(new BigDecimal(55.50));
         hairService.save(hairForm);
     }

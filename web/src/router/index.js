@@ -13,6 +13,8 @@ import hairList from "@/views/hair/hairList";
 import hairType from "@/views/hair/hairType";
 import store from '@/store'
 import storage from "@/store/storage";
+import hairEdit from "@/views/hair/hairEdit";
+import hairAdd from "@/views/hair/hairAdd";
 Vue.use(VueRouter);
 
 
@@ -56,6 +58,11 @@ const router = new VueRouter({
                     path:'/sys/barberAdd',
                     component:barberAdd
                 },
+                    {
+                        name:'/sys/hairAdd',
+                        path:'/sys/hairAdd',
+                        component:hairAdd
+                    },
                  {
                    path:'/sys/hairList',
                     component:hairList
@@ -76,7 +83,12 @@ const router = new VueRouter({
                     name:'barberEdit',
                     path: '/sys/:id',
                     component: barberEdit,
-                }
+                },
+               {
+                   name:'hairEdit',
+                   path: '/sys/:id',
+                   component: hairEdit,
+               }
 
             ]
         },
