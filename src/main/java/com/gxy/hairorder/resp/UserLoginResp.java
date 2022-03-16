@@ -2,19 +2,17 @@ package com.gxy.hairorder.resp;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
-
 /**
  * @author GUO
- * @Classname SysLoginResp
- * @Description TODO
+ * @Classname UserLoginResp
+ * @Description 登录拦截对象
  * @Date 2022/2/8 20:57
  */
 @Data
 public class UserLoginResp {
     private Long id;
-    @NotNull(message = "【用户名】不能为空")
     private String username;
     private String name;
+    private String phone;
     private String token;
 }

@@ -26,13 +26,13 @@ public class HairController {
 
     @Autowired
     private HairService hairService;
-    @GetMapping("/wxAll")
-    public CommonResp hairList(){
-        CommonResp resp=new CommonResp();
-        List<HairResp> respList = hairService.wxAll();
-        resp.setContent(respList);
-        return resp;
-    }
+//    @GetMapping("/wxAll")
+//    public CommonResp hairList(){
+//        CommonResp resp=new CommonResp();
+//        List<HairResp> respList = hairService.wxAll();
+//        resp.setContent(respList);
+//        return resp;
+//    }
     @GetMapping("/list")
     public CommonResp hairPage(HairReq hairReq){
         CommonResp resp=new CommonResp();
@@ -55,9 +55,9 @@ public class HairController {
         hairService.del(hairId);
         return resp;
     }
+    //按id查询
     @GetMapping("/find/{hairId}")
-    public CommonResp hairTypeDel(@PathVariable Long hairId){
-
+    public CommonResp findHairId(@PathVariable Long hairId){
         CommonResp resp=new CommonResp();
         HairResp hairResp = hairService.findById(hairId);
         if(!ObjectUtils.isEmpty(hairResp)){
@@ -70,4 +70,22 @@ public class HairController {
             return resp;
         }
     }
+    //按类型查询
+    @GetMapping("/ListByHairType/{hairTypeId}")
+    public CommonResp hairListByHairType(@PathVariable Long hairTypeId){
+        CommonResp resp=new CommonResp();
+       List<HairResp>  hairRespList = hairService.hairListByHairType(hairTypeId);
+       resp.setContent(hairRespList);
+       resp.setMessage("查询成功");
+       return resp;
+    }
+//    //按首页查询
+//    @GetMapping("/index")
+//    public CommonResp index(){
+//        CommonResp resp=new CommonResp();
+//        List<HairResp>  hairRespList = hairService.index();
+//        resp.setContent(hairRespList);
+//        resp.setMessage("查询成功");
+//        return resp;
+//    }
 }

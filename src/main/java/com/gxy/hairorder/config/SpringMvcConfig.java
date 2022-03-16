@@ -23,8 +23,9 @@ public class SpringMvcConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 //过滤不需要拦截的路径
                 .excludePathPatterns(
-                        "/hair/wxAll",
+                        "/hair/**",
                         "/hair/find/**",
+                        "/hairType/**",
                         "/barberType/list",
                         "/login/**"
                 );

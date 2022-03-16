@@ -1,14 +1,13 @@
 package com.gxy.hairorder.controller;
 
+import com.gxy.hairorder.form.UserForm;
 import com.gxy.hairorder.req.UserReq;
 import com.gxy.hairorder.resp.CommonResp;
 import com.gxy.hairorder.resp.PageResp;
 import com.gxy.hairorder.resp.UserResp;
 import com.gxy.hairorder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -28,6 +27,14 @@ public class UserController {
         CommonResp<PageResp<UserResp>> resp=new CommonResp<>();
         PageResp<UserResp> pageResp = userService.list(userReq);
         resp.setContent(pageResp);
+        return resp;
+    }
+    @PostMapping("/save")
+    public CommonResp hairSave(@Valid @RequestBody UserForm userForm){
+
+        CommonResp resp=new CommonResp();
+        resp.setMessage("更新个人信息");
+        userService.save(userForm);
         return resp;
     }
 

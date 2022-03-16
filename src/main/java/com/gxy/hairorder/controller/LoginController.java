@@ -40,6 +40,22 @@ public class LoginController {
     private UserService userService;
     @Autowired
     private   SMSUtil smsUtil;
+
+
+    @PostMapping("/wxlogin")
+    public CommonResp pwLogin(@Valid @RequestBody LoginReq req){
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        CommonResp<UserLoginResp> resp=new CommonResp();
+        UserResp userResp = userService.login(req);
+        UserLoginResp userLoginResp = CopyUtil.copy(userResp, UserLoginResp.class);
+        //生成单点登录token,存入redis
+        Long token = snowFlake.nextId();
+        userLoginResp.setToken(token.toString());
+        log.info("生成单点登录token:{},存入redis中",token);
+        redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSONString(userLoginResp),3600*24, TimeUnit.SECONDS);
+        resp.setContent(userLoginResp);
+        return resp;
+    }
     @PostMapping("/sys")
     public CommonResp sysLogin(@Valid @RequestBody LoginReq req){
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
@@ -90,7 +106,7 @@ public class LoginController {
             phoneForm.setPhone(phone);
             phoneForm.setCode(code);
             log.info(phoneForm.toString());
-            redisTemplate.opsForValue().set(phone+code,JSONObject.toJSONString(phoneForm),60*20,TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(phone+code,JSONObject.toJSONString(phoneForm),3600*2,TimeUnit.SECONDS);
             Object object = redisTemplate.opsForValue().get(phone+code);
             log.info("发送短信结果:{},redisCode;{}",s,object);
             commonResp.setMessage("短信发送成功,五分钟内有效!");
@@ -104,25 +120,21 @@ public class LoginController {
         //查询缓存
         Object o  = redisTemplate.opsForValue().get(loginReq.getPhone() + loginReq.getCode());
         if(ObjectUtils.isEmpty(o)){
-            commonResp.setMessage("手机号验证码错误!!");
+            commonResp.setMessage("手机号或验证码错误!!");
             commonResp.setSuccess(false);
             return commonResp;
         }else{
             UserResp userResp= userService.findByPhone(loginReq.getPhone());
-//            UserLoginResp userLoginResp = new UserLoginResp();
             Long token = snowFlake.nextId();
             //查询手机号是否在数据库
             if (ObjectUtils.isEmpty(userResp)){
                 //注册成功
                 commonResp.setMessage("注册成功");
                 userService.saveUser(loginReq.getPhone());
-
                 UserResp user =userService.findByPhone(loginReq.getPhone());
                 UserLoginResp userLoginResp = CopyUtil.copy(user, UserLoginResp.class);
-
                 userLoginResp.setToken(token.toString());
                 userLoginResp.setUsername(loginReq.getPhone());
-
                 log.info("生成单点登录token:{},存入redis中",token);
                 redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSONString(userLoginResp),3600*24, TimeUnit.SECONDS);
                 commonResp.setContent(userLoginResp);
@@ -138,5 +150,13 @@ public class LoginController {
                 return commonResp;
             }
         }
+    }
+    //退出登录
+    @DeleteMapping("/logout/{token}")
+    public CommonResp logout(@PathVariable String token){
+        CommonResp resp=new CommonResp();
+        Boolean b = redisTemplate.delete(token);
+        log.info("删除redis中token:{},是否删除成功:{}",token,b);
+        return resp;
     }
 }

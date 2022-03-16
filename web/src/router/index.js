@@ -81,15 +81,14 @@ const router = new VueRouter({
                 },
                 {
                     name:'barberEdit',
-                    path: '/sys/:id',
+                    path: '/sys/barberId=:id',
                     component: barberEdit,
                 },
-               {
-                   name:'hairEdit',
-                   path: '/sys/:id',
-                   component: hairEdit,
-               }
-
+                    {
+                        name:'hairEdit',
+                        path: '/sys/hairId=:id',
+                        component: hairEdit,
+                    }
             ]
         },
     ]

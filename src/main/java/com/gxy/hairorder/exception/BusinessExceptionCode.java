@@ -1,6 +1,7 @@
 package com.gxy.hairorder.exception;
 
 public enum BusinessExceptionCode {
+    USER_ERROR("用户不存在"),
     HAIR_ERROR("项目不存在"),
     BARBER_ERROR("理发师不存在"),
     BARBER_TYPE_ERROR("理发师类型不存在"),

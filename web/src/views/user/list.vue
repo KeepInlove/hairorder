@@ -108,9 +108,28 @@
                 this.user={}
             },
             updateUser(e){
-                console.log('更新');
-                console.log(e);
-                this.dialogForm=false;
+              this.$axios.post('/api/user/save',this.user).then((res) => {
+                // console.log("<==============>");
+                // console.log(res)
+                if (res.status != 200) return this.$message.error("网络错误");
+                if (res.data.success == true) {
+                  this.$notify({
+                    title: '成功',
+                    message: '修改成功!',
+                    type: 'success'
+                  });
+                } else {
+                  this.$notify({
+                    title: '失败',
+                    message: '修改失败!',
+                    type: 'error'
+                  });
+                }
+              })
+                // console.log('更新');
+                // console.log(e);
+              this.dialogForm=false;
+              this.getList(this.page-1,this.pageSize);
             },
             handleSizeChange(val) {
                 this.pageSize=val;

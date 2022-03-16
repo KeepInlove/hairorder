@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "首页",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
-  }
-}

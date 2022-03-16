@@ -2,7 +2,11 @@ package com.gxy.hairorder.service;
 
 
 import com.gxy.hairorder.entity.User;
+import com.gxy.hairorder.exception.BusinessException;
+import com.gxy.hairorder.exception.BusinessExceptionCode;
+import com.gxy.hairorder.form.UserForm;
 import com.gxy.hairorder.repository.UserRepository;
+import com.gxy.hairorder.req.LoginReq;
 import com.gxy.hairorder.req.UserReq;
 import com.gxy.hairorder.resp.PageResp;
 import com.gxy.hairorder.resp.UserResp;
@@ -13,8 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 
+import javax.transaction.Transactional;
 import java.sql.Date;
 import java.util.List;
 
@@ -26,6 +32,7 @@ import java.util.List;
  */
 @Slf4j
 @Service
+@Transactional
 public class UserService {
     @Autowired
     private UserRepository userRepository;
@@ -53,6 +60,16 @@ public class UserService {
         return pageResp;
     }
 
+    public UserResp login(LoginReq loginReq){
+        User user = userRepository.findByPhoneAndPassword(loginReq.getPhone(), loginReq.getPassword());
+        if (ObjectUtils.isEmpty(user)){
+            return null;
+        }else {
+            UserResp userResp = CopyUtil.copy(user, UserResp.class);
+            return userResp;
+        }
+
+    }
    public UserResp findByPhone(String phone){
        User user = userRepository.findByPhone(phone);
        if (ObjectUtils.isEmpty(user)){
@@ -72,4 +89,29 @@ public class UserService {
         user.setName(phone);
         userRepository.save(user);
    }
+
+    public void save(UserForm userForm) {
+
+        User user = CopyUtil.copy(userForm, User.class);
+        user.setCreateTime(new Date(System.currentTimeMillis()));
+        if (ObjectUtils.isEmpty(userForm.getId())){
+            user.setId(snowFlake.nextId());
+            user.setIntegral(0);
+        }else {
+            User repository = userRepository.findByPhone(userForm.getPhone());
+            //解决不更新字段时不被设置为null;
+            if (repository==null){
+                throw new BusinessException(BusinessExceptionCode.USER_ERROR);
+            }
+            if (ObjectUtils.isEmpty(userForm.getPassword())){
+                user.setPassword(repository.getPassword());
+            }else {
+            String password = DigestUtils.md5DigestAsHex(userForm.getPassword().getBytes());
+            user.setPassword(password);
+            }
+            CopyUtil.copyNullProperties(repository,user);
+            userRepository.save(user);
+        }
+
+    }
 }

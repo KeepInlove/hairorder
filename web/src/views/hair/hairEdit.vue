@@ -79,8 +79,10 @@ export default {
 
   mounted() {
     this.getHairType();
+    // this.hairForm=this.$route.params.hairForm
     this.getHair();
     this.getBarberType();
+
   },
   methods: {
     // 监听图片上传成功事件
@@ -105,12 +107,13 @@ export default {
       // this.pictureList.push(picInfo);
     },
     getHair() {
-      console.log(this.id);
+      // console.log(this.id);
       if (this.hairForm == null) {
         console.log("<==============>");
+        console.log(this.id);
         this.$axios.get('/api/hair/find/' + this.id).then((res) => {
-          // console.log("<==============>");
-          // console.log(res);
+          console.log("<==============>");
+          console.log(res);
           this.hairForm=res.data.content
         })
       }else {
@@ -128,19 +131,19 @@ export default {
     },
     getBarberType(){
       this.$axios.get('/api/barberType/list').then((res)=>{
-        console.log("<==============>");
-        console.log(res)
+        // console.log("<==============>");
+        // console.log(res)
         if (res.status!=200) return this.$message.error("网络错误");
         this.barberTypeList=res.data.content;
 
       })
     },
     onSubmit() {
-      console.log('submit!');
-      console.log(this.hairForm);
+      // console.log('submit!');
+      // console.log(this.hairForm);
       this.$axios.post("/api/hair/save", this.hairForm).then((res) => {
         // console.log("<==============>");
-        console.log(res)
+        // console.log(res)
         if (res.status != 200) return this.$message.error("网络错误");
         if (res.data.success == true) {
           this.$notify({

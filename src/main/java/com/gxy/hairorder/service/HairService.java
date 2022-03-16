@@ -22,7 +22,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.sql.Date;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,19 +43,19 @@ public class HairService {
     private SnowFlake snowFlake;
 
     //微信小程序
-    public List<HairResp> wxAll(){
-        List<Hair> hairList = hairRepository.findAll();
-        //拷贝工具类
-        List<HairResp> respList = CopyUtil.copyList(hairList, HairResp.class);
-        for (HairResp hairResp:respList){
-            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
-            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
-            hairResp.setBarberTypeName(barberType.getBarberTypeName());
-            hairResp.setHairTypeName(hairType.getHairTypeName());
-        }
-        Collections.reverse(respList);
-        return respList;
-    }
+//    public List<HairResp> wxAll(){
+//        List<Hair> hairList = hairRepository.findAll();
+//        //拷贝工具类
+//        List<HairResp> respList = CopyUtil.copyList(hairList, HairResp.class);
+//        for (HairResp hairResp:respList){
+//            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
+//            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
+//            hairResp.setBarberTypeName(barberType.getBarberTypeName());
+//            hairResp.setHairTypeName(hairType.getHairTypeName());
+//        }
+//        Collections.reverse(respList);
+//        return respList;
+//    }
 
     public PageResp<HairResp> list(HairReq req){
 //        PageHelper.startPage(req.getPage(),req.getSize());
@@ -110,11 +109,31 @@ public class HairService {
             HairResp hairResp = CopyUtil.copy(hair, HairResp.class);
             hairResp.setHairTypeName(hairType.getHairTypeName());
             return hairResp;
-        }
+        }else {
         return null;
+        }
     }
 
     public void del(Long hairId) {
         hairRepository.deleteById(hairId);
     }
+
+    public List<HairResp> hairListByHairType(Long hairTypeId) {
+        List<Hair> hairList = hairRepository.findByHairTypeId(hairTypeId);
+        List<HairResp> hairRespList = CopyUtil.copyList(hairList, HairResp.class);
+        for (HairResp hairResp:hairRespList){
+            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
+            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
+            hairResp.setBarberTypeName(barberType.getBarberTypeName());
+            hairResp.setHairTypeName(hairType.getHairTypeName());
+        }
+        return hairRespList;
+    }
+
+//    public List<HairResp> index() {
+//        List<HairType> typeList = hairTypeRepository.findAll();
+//        HairType hairType = typeList.get(0);
+//        List<HairResp> hairRespList = hairListByHairType(hairType.getHairTypeId());
+//        return hairRespList;
+//    }
 }

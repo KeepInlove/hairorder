@@ -1,5 +1,6 @@
 package com.gxy.hairorder.service;
 
+import com.gxy.hairorder.controller.HairController;
 import com.gxy.hairorder.form.HairForm;
 import com.gxy.hairorder.resp.HairResp;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,8 @@ class HairServiceTest {
 
     @Autowired
     private HairService hairService;
+    @Autowired
+    private HairController hairController;
     @Test
    public void list() {
 //        HairReq hairReq=new HairReq();
@@ -29,8 +32,8 @@ class HairServiceTest {
 //        hairReq.setSize(3);
 //        PageResp<HairResp> list = hairService.list(hairReq);
 //        log.info(list.toString());
-        List<HairResp> respList = hairService.wxAll();
-        log.info(respList.toString());
+//        List<HairResp> respList = hairService.wxAll();
+//        log.info(respList.toString());
     }
 
     @Test
@@ -46,9 +49,13 @@ class HairServiceTest {
 
     @Test
     void findById() {
+        hairController.findHairId(9837053321167872l);
+
     }
 
     @Test
-    void del() {
+    void hairListByHairType() {
+        List<HairResp> hairRespList = hairService.hairListByHairType(9836171155751936l);
+        log.info(hairRespList.toString());
     }
 }
