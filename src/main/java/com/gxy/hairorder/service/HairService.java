@@ -106,8 +106,10 @@ public class HairService {
         Hair hair = hairRepository.findByHairId(hairId);
         if (!ObjectUtils.isEmpty(hair)){
             HairType hairType = hairTypeRepository.findByHairTypeId(hair.getHairTypeId());
+            BarberType barberType=barberTypeRepository.findByBarberTypeId(hair.getBarberTypeId());
             HairResp hairResp = CopyUtil.copy(hair, HairResp.class);
             hairResp.setHairTypeName(hairType.getHairTypeName());
+            hairResp.setBarberTypeName(barberType.getBarberTypeName());
             return hairResp;
         }else {
         return null;

@@ -2,18 +2,14 @@ package com.gxy.hairorder.service;
 
 import com.gxy.hairorder.entity.Barber;
 import com.gxy.hairorder.entity.BarberType;
-import com.gxy.hairorder.entity.User;
 import com.gxy.hairorder.exception.BusinessException;
 import com.gxy.hairorder.exception.BusinessExceptionCode;
 import com.gxy.hairorder.form.BarberForm;
 import com.gxy.hairorder.repository.BarberRepository;
 import com.gxy.hairorder.repository.BarberTypeRepository;
 import com.gxy.hairorder.req.BarberReq;
-import com.gxy.hairorder.req.BarberTypeReq;
-import com.gxy.hairorder.req.UserReq;
 import com.gxy.hairorder.resp.BarberResp;
 import com.gxy.hairorder.resp.PageResp;
-import com.gxy.hairorder.resp.UserResp;
 import com.gxy.hairorder.utils.CopyUtil;
 import com.gxy.hairorder.utils.SnowFlake;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +21,7 @@ import org.springframework.util.ObjectUtils;
 
 import java.sql.Date;
 import java.util.List;
-import java.util.Optional;
+
 
 /**
  * @author GUO
@@ -97,6 +93,10 @@ public class BarberService {
             return barberResp;
         }
         return null;
+    }
+    public List<Barber> findTypeId(Long barberTypeId) {
+        List <Barber> barberList=   barberRepository.findByBarberTypeId(barberTypeId);
+        return barberList;
     }
 
     public void del(Long barberId) {
