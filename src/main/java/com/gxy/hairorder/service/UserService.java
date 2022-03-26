@@ -96,7 +96,7 @@ public class UserService {
         user.setCreateTime(new Date(System.currentTimeMillis()));
         if (ObjectUtils.isEmpty(userForm.getId())){
             user.setId(snowFlake.nextId());
-            user.setIntegral(0);
+            userRepository.save(user);
         }else {
             User repository = userRepository.findByPhone(userForm.getPhone());
             //解决不更新字段时不被设置为null;
@@ -113,5 +113,9 @@ public class UserService {
             userRepository.save(user);
         }
 
+    }
+
+    public void userDel(Long userId) {
+        userRepository.deleteById(userId);
     }
 }

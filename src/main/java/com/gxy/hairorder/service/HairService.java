@@ -122,6 +122,25 @@ public class HairService {
 
     public List<HairResp> hairListByHairType(Long hairTypeId) {
         List<Hair> hairList = hairRepository.findByHairTypeId(hairTypeId);
+        List<HairResp> hairRespList = hairToHairResp(hairList);
+        return hairRespList;
+//        List<HairResp> hairRespList = CopyUtil.copyList(hairList, HairResp.class);
+//        for (HairResp hairResp:hairRespList){
+//            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
+//            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
+//            hairResp.setBarberTypeName(barberType.getBarberTypeName());
+//            hairResp.setHairTypeName(hairType.getHairTypeName());
+//        }
+//        return hairRespList;
+    }
+
+    public List<HairResp> hairListByBarberType(Long barberTypeId) {
+        List<Hair> hairList = hairRepository.findByBarberTypeId(barberTypeId);
+        List<HairResp> hairRespList = hairToHairResp(hairList);
+        return hairRespList;
+    }
+
+    public List<HairResp> hairToHairResp(List<Hair> hairList){
         List<HairResp> hairRespList = CopyUtil.copyList(hairList, HairResp.class);
         for (HairResp hairResp:hairRespList){
             HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
@@ -131,7 +150,6 @@ public class HairService {
         }
         return hairRespList;
     }
-
 //    public List<HairResp> index() {
 //        List<HairType> typeList = hairTypeRepository.findAll();
 //        HairType hairType = typeList.get(0);

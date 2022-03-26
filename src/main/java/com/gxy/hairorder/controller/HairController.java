@@ -71,13 +71,23 @@ public class HairController {
         }
     }
     //按类型查询
-    @GetMapping("/ListByHairType/{hairTypeId}")
+    @GetMapping("/byHairType/{hairTypeId}")
     public CommonResp hairListByHairType(@PathVariable Long hairTypeId){
         CommonResp resp=new CommonResp();
        List<HairResp>  hairRespList = hairService.hairListByHairType(hairTypeId);
        resp.setContent(hairRespList);
        resp.setMessage("查询成功");
        return resp;
+    }
+
+    //按类型查询
+    @GetMapping("/byBarberType/{barberTypeId}")
+    public CommonResp hairListByBarberType(@PathVariable Long barberTypeId){
+        CommonResp resp=new CommonResp();
+        List<HairResp>  hairRespList = hairService.hairListByBarberType(barberTypeId);
+        resp.setContent(hairRespList);
+        resp.setMessage("查询成功");
+        return resp;
     }
 //    //按首页查询
 //    @GetMapping("/index")

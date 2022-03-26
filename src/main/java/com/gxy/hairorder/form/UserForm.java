@@ -15,5 +15,6 @@ public class UserForm {
     private String name;
     private String password;
     private String phone;
+    private int integral;
     private String sex;
 }

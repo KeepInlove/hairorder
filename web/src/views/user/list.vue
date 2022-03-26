@@ -27,7 +27,9 @@
                 <el-table-column prop="createTime" sortable label="创建时间"></el-table-column>
                 <el-table-column label="操作" fixed="right" >
                     <template slot-scope="scope">
-                        <el-button round  @click="editClick(scope.row),dialogForm=true">编辑</el-button>
+                      <el-button type="success"  size="mini" round   @click="editClick(scope.row),dialogForm=true">编辑</el-button>
+                      <el-button  type="danger"  size="mini" round  @click="userDel(scope.row)">删除</el-button>
+<!--                        <el-button round  @click="editClick(scope.row),dialogForm=true">编辑</el-button>-->
                     </template>
                 </el-table-column>
             </el-table>
@@ -89,7 +91,7 @@
             this.getList(this.page-1,this.pageSize)
         },
         methods:{
-            getList(page,size){
+          getList(page,size){
                 const thas=this;
                 this.$axios.get('/api/user/list', {
                         params:{page:page, size:size}
@@ -100,6 +102,35 @@
                     thas.userList=res.data.content.list
                 })
             },
+
+          //删除
+          async  userDel(e){
+            console.log(e);
+              // 弹框询问用户是否删除数据
+              const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+              })
+              // 如果用户确认删除，则返回值为字符串 confirm
+              // 如果用户取消删除，则返回值为字符串 cancel
+              if (confirmResult !== 'confirm') {
+                return this.$message.info('已取消删除')
+              }
+              // 发起删除用户信息的数据请求
+              const {data: res} = await this.$axios.delete('/api/user/userDel/' + e.id)
+              if (res.success!==true) {
+
+                return this.$message.error('删除用户失败！')
+              }
+              // 提示删除成功
+              this.$message.success('删除用户成功！');
+              // 更新数据列表
+              this.getList(this.page-1,this.pageSize)
+
+            },
+
+
             editClick(e){
                 this.user=e;
                 console.log(e);
@@ -109,8 +140,8 @@
             },
             updateUser(e){
               this.$axios.post('/api/user/save',this.user).then((res) => {
-                // console.log("<==============>");
-                // console.log(res)
+                console.log("<==============>");
+                console.log(e)
                 if (res.status != 200) return this.$message.error("网络错误");
                 if (res.data.success == true) {
                   this.$notify({
@@ -118,6 +149,7 @@
                     message: '修改成功!',
                     type: 'success'
                   });
+                  this.getList(this.page-1,this.pageSize)
                 } else {
                   this.$notify({
                     title: '失败',

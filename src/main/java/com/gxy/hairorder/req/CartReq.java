@@ -2,7 +2,6 @@ package com.gxy.hairorder.req;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -17,6 +16,5 @@ public class CartReq {
     private Long userId;
     private Long hairId;
     private Long barberId;
-    private BigDecimal price;
     private Date orderDate;
 }

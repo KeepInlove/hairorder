@@ -47,14 +47,18 @@
                           <span>新增项目</span>
                         </template>
                       </el-menu-item>
-                        <el-menu-item index="hairType">
-                            <template slot="title">
-                                <i class="el-icon-s-check"></i>
-                                <span>项目类型</span>
-                            </template>
-                        </el-menu-item>
-
+<!--                        <el-menu-item index="hairType">-->
+<!--                            <template slot="title">-->
+<!--                                <i class="el-icon-s-check"></i>-->
+<!--                                <span>项目类型</span>-->
+<!--                            </template>-->
+<!--                        </el-menu-item>-->
                     </el-submenu>
+                  <el-menu-item  index="hairType">
+                    <i class="el-icon-coin" />
+                    <span slot="title">项目类型</span>
+                  </el-menu-item >
+
                     <el-submenu index="3">
                         <template slot="title">
                             <i class="el-icon-s-check"></i>
@@ -72,13 +76,18 @@
                                 <span>新增理发师</span>
                             </template>
                         </el-menu-item>
-                        <el-menu-item index="barberTypeList">
-                            <template slot="title">
-                              <i class="el-icon-coordinate"></i>
-                                <span>理发师类型列表</span>
-                            </template>
-                        </el-menu-item>
+<!--                        <el-menu-item index="barberTypeList">-->
+<!--                            <template slot="title">-->
+<!--                              <i class="el-icon-coordinate"></i>-->
+<!--                                <span>理发师类型列表</span>-->
+<!--                            </template>-->
+<!--                        </el-menu-item>-->
                     </el-submenu>
+
+                  <el-menu-item  index="barberTypeList">
+                    <i class="el-icon-s-data" />
+                    <span slot="title">理发师类型列表</span>
+                  </el-menu-item >
                 </el-menu>
             </el-aside>
             <el-main>

@@ -27,5 +27,5 @@ public class Cart {
     private Long barberId;
     private BigDecimal price;
     private Date orderDate;
-    private Date createDate;
+    private Date createTime;
 }

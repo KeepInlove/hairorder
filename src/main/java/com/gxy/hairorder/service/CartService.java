@@ -13,6 +13,8 @@ import com.gxy.hairorder.utils.SnowFlake;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
@@ -24,6 +26,7 @@ import java.util.List;
  * @Description TODO
  */
 @Service
+@Transactional
 public class CartService {
     @Autowired
     public CartRepository cartRepository;
@@ -37,10 +40,14 @@ public class CartService {
     public void save(CartReq cartReq){
         Cart cart = CopyUtil.copy(cartReq, Cart.class);
         cart.setCartId(snowFlake.nextId());
-        cart.setCreateDate(new Date(System.currentTimeMillis()));
+        cart.setCreateTime(new Date(System.currentTimeMillis()));
+        Hair hair = hairRepository.findByHairId(cartReq.getHairId());
+        Barber barber = barberRepository.findByBarberId(cartReq.getBarberId());
+        BigDecimal  price = barber.getBarberPrice().add(hair.getHairPrice());
+        cart.setPrice(price);
         cartRepository.save(cart);
     }
-    public List<CartResp> findByUserId(Long userId){
+    public List<CartResp> findCart(Long userId){
         List<Cart> cartList = cartRepository.findByUserId(userId);
         List<CartResp> cartRespList = CopyUtil.copyList(cartList, CartResp.class);
         for (CartResp cartResp:cartRespList){
@@ -51,4 +58,14 @@ public class CartService {
         }
         return cartRespList;
     }
+
+
+    public void delCart(Long userId) {
+        cartRepository.deleteById(userId);
+    }
+    public Integer countByUserId(Long userId){
+        Integer count = cartRepository.countByUserId(userId);
+        return count;
+    }
+
 }

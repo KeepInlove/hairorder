@@ -30,12 +30,18 @@ public class UserController {
         return resp;
     }
     @PostMapping("/save")
-    public CommonResp hairSave(@Valid @RequestBody UserForm userForm){
+    public CommonResp userSave(@Valid @RequestBody UserForm userForm){
 
         CommonResp resp=new CommonResp();
         resp.setMessage("更新个人信息");
         userService.save(userForm);
         return resp;
     }
-
+    @DeleteMapping("/userDel/{userId}")
+    public CommonResp userDel(@PathVariable Long userId){
+        CommonResp resp=new CommonResp();
+        resp.setMessage("删除用户成功");
+        userService.userDel(userId);
+        return resp;
+    }
 }

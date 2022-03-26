@@ -23,18 +23,33 @@ public class CarController {
     @Autowired
     private CartService cartService;
 
-    @PostMapping("/add")
+    @PostMapping("/addCart")
     public CommonResp add(@Valid @RequestBody CartReq cartReq){
         CommonResp commonResp=new CommonResp();
         cartService.save(cartReq);
         return commonResp;
     }
 
-    @GetMapping("/findUserId/{userId}")
-    public CommonResp findByUserId(@PathVariable Long userId){
+    @GetMapping("/findCart/{userId}")
+    public CommonResp findCart(@PathVariable Long userId){
         CommonResp commonResp=new CommonResp();
-        List<CartResp> cartRespList = cartService.findByUserId(userId);
+        List<CartResp> cartRespList = cartService.findCart(userId);
         commonResp.setContent(cartRespList);
+        return commonResp;
+    }
+
+    @DeleteMapping("/delCart/{userId}")
+    public CommonResp delCart(@PathVariable Long userId){
+        CommonResp commonResp=new CommonResp();
+         cartService.delCart(userId);
+        return commonResp;
+    }
+
+    @GetMapping("/count/{userId}")
+    public CommonResp countByUserId(@PathVariable Long userId){
+        CommonResp commonResp=new CommonResp();
+        Integer count = cartService.countByUserId(userId);
+        commonResp.setContent(count);
         return commonResp;
     }
 }
