@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -38,10 +39,10 @@ public class CarController {
         return commonResp;
     }
 
-    @DeleteMapping("/delCart/{userId}")
-    public CommonResp delCart(@PathVariable Long userId){
+    @DeleteMapping("/delCart/{cartId}")
+    public CommonResp delCart(@PathVariable Long cartId){
         CommonResp commonResp=new CommonResp();
-         cartService.delCart(userId);
+         cartService.delCart(cartId);
         return commonResp;
     }
 
@@ -50,6 +51,19 @@ public class CarController {
         CommonResp commonResp=new CommonResp();
         Integer count = cartService.countByUserId(userId);
         commonResp.setContent(count);
+        return commonResp;
+    }
+    @GetMapping("/isCheck/{cartId}")
+    public CommonResp isCheck(@PathVariable Long cartId){
+        CommonResp commonResp=new CommonResp();
+         cartService.isCheck(cartId);
+        return commonResp;
+    }
+
+    @GetMapping("/updateDate")
+    public CommonResp updateDate(Long cartId, Date orderDate){
+        CommonResp commonResp=new CommonResp();
+        cartService.updateDate(cartId,orderDate);
         return commonResp;
     }
 }

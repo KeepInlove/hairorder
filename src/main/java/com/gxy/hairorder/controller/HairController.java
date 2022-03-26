@@ -89,6 +89,16 @@ public class HairController {
         resp.setMessage("查询成功");
         return resp;
     }
+
+    @GetMapping("/byHairName")
+    public CommonResp byHairName(String hairName){
+        CommonResp resp=new CommonResp();
+        List<HairResp>  hairRespList = hairService.byHairName(hairName);
+        resp.setContent(hairRespList);
+        resp.setMessage("查询成功");
+        return resp;
+    }
+
 //    //按首页查询
 //    @GetMapping("/index")
 //    public CommonResp index(){

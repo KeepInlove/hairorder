@@ -63,4 +63,10 @@ class HairServiceTest {
         List<HairResp> hairRespList = hairService.hairListByBarberType(9797083173766144l);
         log.info(hairRespList.toString());
     }
+
+    @Test
+    void byHairName(){
+        List<HairResp> hairRespList = hairService.byHairName("测试");
+        log.info(hairRespList.toString());
+    }
 }

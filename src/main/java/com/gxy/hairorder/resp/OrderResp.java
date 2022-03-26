@@ -8,20 +8,19 @@ import java.sql.Date;
 /**
  * @author Guo
  * @creed: 少壮不努力, 以后卡卡西
- * @Date 2022/3/22 19:31
- * @Classname CartResp
+ * @Date 2022/3/27 2:09
+ * @Classname OrderResp
  * @Description TODO
  */
 @Data
-public class CartResp {
-    private Long cartId;
-    private Long userId;
+public class OrderResp {
+    private Long orderId;
     private Long hairId;
     private Long barberId;
     private BigDecimal price;
+    private String hairName;
     private String hairImg;
-    private String hariName;
     private String barberName;
     private Date orderDate;
-    private boolean checked;
+    private Integer orderStatus;
 }

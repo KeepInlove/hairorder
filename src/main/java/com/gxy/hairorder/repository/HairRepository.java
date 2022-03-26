@@ -18,5 +18,7 @@ public interface HairRepository extends JpaRepository<Hair,Long> {
     List<Hair> findByHairTypeId(Long hairTypeId);
 
     List<Hair> findByBarberTypeId(Long barberTypeId);
+
+    List<Hair> findByHairNameLike(String hairName);
     Hair findByHairId(Long hairId);
 }

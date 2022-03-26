@@ -1,6 +1,7 @@
 package com.gxy.hairorder.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -17,7 +18,8 @@ import java.util.Date;
 @Table(name = "t_order")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @CreatedBy
+    @Column(name = "order_id")
     private Long orderId;
     private Long userId;
     private Long hairId;

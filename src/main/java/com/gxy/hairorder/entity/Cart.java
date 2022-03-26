@@ -28,4 +28,5 @@ public class Cart {
     private BigDecimal price;
     private Date orderDate;
     private Date createTime;
+    private boolean checked;
 }

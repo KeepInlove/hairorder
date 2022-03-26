@@ -50,22 +50,35 @@ public class CartService {
     public List<CartResp> findCart(Long userId){
         List<Cart> cartList = cartRepository.findByUserId(userId);
         List<CartResp> cartRespList = CopyUtil.copyList(cartList, CartResp.class);
+
         for (CartResp cartResp:cartRespList){
             Hair hair = hairRepository.findByHairId(cartResp.getHairId());
             Barber barber = barberRepository.findByBarberId(cartResp.getBarberId());
             cartResp.setBarberName(barber.getBarberName());
             cartResp.setHariName(hair.getHairName());
+            cartResp.setHairImg(hair.getHairImg());
         }
         return cartRespList;
     }
 
 
-    public void delCart(Long userId) {
-        cartRepository.deleteById(userId);
+    public void delCart(Long cartId) {
+        cartRepository.deleteById(cartId);
     }
     public Integer countByUserId(Long userId){
         Integer count = cartRepository.countByUserId(userId);
         return count;
     }
-
+    //修改状态
+    public void isCheck(Long cartId) {
+        Cart cart = cartRepository.findByCartId(cartId);
+        cart.setChecked(!cart.isChecked());
+        cartRepository.save(cart);
+    }
+    //修改日期
+    public void updateDate(Long cartId, Date orderDate) {
+        Cart cart = cartRepository.findByCartId(cartId);
+        cart.setOrderDate(orderDate);
+        cartRepository.save(cart);
+    }
 }

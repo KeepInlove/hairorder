@@ -139,7 +139,11 @@ public class HairService {
         List<HairResp> hairRespList = hairToHairResp(hairList);
         return hairRespList;
     }
-
+    public List<HairResp> byHairName(String hairName) {
+        List<Hair> hairList = hairRepository.findByHairNameLike(hairName);
+        List<HairResp> hairRespList = hairToHairResp(hairList);
+        return hairRespList;
+    }
     public List<HairResp> hairToHairResp(List<Hair> hairList){
         List<HairResp> hairRespList = CopyUtil.copyList(hairList, HairResp.class);
         for (HairResp hairResp:hairRespList){
@@ -150,6 +154,8 @@ public class HairService {
         }
         return hairRespList;
     }
+
+
 //    public List<HairResp> index() {
 //        List<HairType> typeList = hairTypeRepository.findAll();
 //        HairType hairType = typeList.get(0);

@@ -14,5 +14,8 @@ import java.util.List;
  */
 public interface CartRepository extends JpaRepository<Cart,Long> {
     List<Cart> findByUserId(Long userId);
+
+    Cart findByCartId(Long cartId);
+
     Integer countByUserId(Long userId);
 }
