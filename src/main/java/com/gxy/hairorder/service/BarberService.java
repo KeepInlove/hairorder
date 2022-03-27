@@ -2,11 +2,13 @@ package com.gxy.hairorder.service;
 
 import com.gxy.hairorder.entity.Barber;
 import com.gxy.hairorder.entity.BarberType;
+import com.gxy.hairorder.entity.Hair;
 import com.gxy.hairorder.exception.BusinessException;
 import com.gxy.hairorder.exception.BusinessExceptionCode;
 import com.gxy.hairorder.form.BarberForm;
 import com.gxy.hairorder.repository.BarberRepository;
 import com.gxy.hairorder.repository.BarberTypeRepository;
+import com.gxy.hairorder.repository.HairRepository;
 import com.gxy.hairorder.req.BarberReq;
 import com.gxy.hairorder.resp.BarberResp;
 import com.gxy.hairorder.resp.PageResp;
@@ -36,6 +38,8 @@ public class BarberService {
     private BarberRepository barberRepository;
     @Autowired
     private BarberTypeRepository barberTypeRepository;
+    @Autowired
+    private HairRepository hairRepository;
     @Autowired
     private SnowFlake snowFlake;
     public PageResp<BarberResp> list(BarberReq req){
@@ -102,4 +106,16 @@ public class BarberService {
     public void del(Long barberId) {
         barberRepository.deleteById(barberId);
     }
+
+    public List<Barber> findHairId(Long hairId) {
+        Hair hair = hairRepository.findByHairId(hairId);
+        Long barberTypeId = hair.getBarberTypeId();
+        List<Barber> barberList = findTypeId(barberTypeId);
+        return barberList;
+    }
+
+//    public List<Barber> all() {
+//        List<Barber> barberList = barberRepository.findAll();
+//        return barberList;
+//    }
 }

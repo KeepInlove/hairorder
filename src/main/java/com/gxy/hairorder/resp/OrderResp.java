@@ -22,5 +22,7 @@ public class OrderResp {
     private String hairImg;
     private String barberName;
     private Date orderDate;
+    private String phone;
     private Integer orderStatus;
+    private String userName;
 }

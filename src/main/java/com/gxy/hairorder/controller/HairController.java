@@ -26,13 +26,14 @@ public class HairController {
 
     @Autowired
     private HairService hairService;
-//    @GetMapping("/wxAll")
-//    public CommonResp hairList(){
-//        CommonResp resp=new CommonResp();
-//        List<HairResp> respList = hairService.wxAll();
-//        resp.setContent(respList);
-//        return resp;
-//    }
+
+    @GetMapping("/All")
+    public CommonResp hairList(){
+        CommonResp resp=new CommonResp();
+        List<HairResp> respList = hairService.All();
+        resp.setContent(respList);
+        return resp;
+    }
     @GetMapping("/list")
     public CommonResp hairPage(HairReq hairReq){
         CommonResp resp=new CommonResp();
@@ -99,7 +100,7 @@ public class HairController {
         return resp;
     }
 
-//    //按首页查询
+    //按首页查询
 //    @GetMapping("/index")
 //    public CommonResp index(){
 //        CommonResp resp=new CommonResp();

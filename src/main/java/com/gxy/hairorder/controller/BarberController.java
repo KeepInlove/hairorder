@@ -26,6 +26,14 @@ public class BarberController {
     @Autowired
     private BarberService barberService;
 
+//    @GetMapping("/index")
+//    public CommonResp index() {
+//        CommonResp<PageResp<BarberResp>> resp = new CommonResp<>();
+//        PageResp<BarberResp> pageResp = barberService.list();
+//        resp.setContent(pageResp);
+//        return resp;
+//    }
+
     @GetMapping("/list")
     public CommonResp userList(@Valid BarberReq barberReq) {
         CommonResp<PageResp<BarberResp>> resp = new CommonResp<>();
@@ -33,7 +41,6 @@ public class BarberController {
         resp.setContent(pageResp);
         return resp;
     }
-
     @PostMapping("/save")
     public CommonResp barberTypeSave(@Valid @RequestBody BarberForm barberForm) {
         CommonResp resp = new CommonResp();
@@ -64,14 +71,19 @@ public class BarberController {
             return resp;
         }
     }
-
+    @GetMapping("/findHairId/{hairId}")
+    public CommonResp findHairId(@PathVariable Long hairId) {
+        CommonResp resp = new CommonResp();
+        List<Barber> barberList = barberService.findHairId(hairId);
+        resp.setContent(barberList);
+        return resp;
+    }
     @GetMapping("/findTypeId/{barberTypeId}")
     public CommonResp findTypeId(@PathVariable Long barberTypeId) {
         CommonResp resp = new CommonResp();
         List<Barber> barberList = barberService.findTypeId(barberTypeId);
         resp.setContent(barberList);
         return resp;
-
     }
 
 }

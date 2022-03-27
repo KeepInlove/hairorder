@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import java.sql.Date;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -43,19 +44,19 @@ public class HairService {
     private SnowFlake snowFlake;
 
     //微信小程序
-//    public List<HairResp> wxAll(){
-//        List<Hair> hairList = hairRepository.findAll();
-//        //拷贝工具类
-//        List<HairResp> respList = CopyUtil.copyList(hairList, HairResp.class);
-//        for (HairResp hairResp:respList){
-//            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
-//            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
-//            hairResp.setBarberTypeName(barberType.getBarberTypeName());
-//            hairResp.setHairTypeName(hairType.getHairTypeName());
-//        }
-//        Collections.reverse(respList);
-//        return respList;
-//    }
+    public List<HairResp> All(){
+        List<Hair> hairList = hairRepository.findAll();
+        //拷贝工具类
+        List<HairResp> respList = CopyUtil.copyList(hairList, HairResp.class);
+        for (HairResp hairResp:respList){
+            HairType hairType = hairTypeRepository.findByHairTypeId(hairResp.getHairTypeId());
+            BarberType barberType=barberTypeRepository.findByBarberTypeId(hairResp.getBarberTypeId());
+            hairResp.setBarberTypeName(barberType.getBarberTypeName());
+            hairResp.setHairTypeName(hairType.getHairTypeName());
+        }
+        Collections.reverse(respList);
+        return respList;
+    }
 
     public PageResp<HairResp> list(HairReq req){
 //        PageHelper.startPage(req.getPage(),req.getSize());

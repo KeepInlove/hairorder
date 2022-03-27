@@ -23,6 +23,7 @@ import org.springframework.util.ObjectUtils;
 import javax.transaction.Transactional;
 import java.sql.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author GUO
@@ -40,7 +41,7 @@ public class UserService {
     private SnowFlake snowFlake;
 
     /**
-     * 分页查询所有用户
+     * 分页查询所有订单
      * @param req
      * @return
      */
@@ -117,5 +118,10 @@ public class UserService {
 
     public void userDel(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    public Integer integral(Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        return user.get().getIntegral();
     }
 }

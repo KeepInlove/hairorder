@@ -1,6 +1,8 @@
 package com.gxy.hairorder.service;
 
+import com.gxy.hairorder.req.OrderReq;
 import com.gxy.hairorder.resp.OrderResp;
+import com.gxy.hairorder.resp.PageResp;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Guo
@@ -31,7 +31,15 @@ class OrderServiceTest {
     }
     @Test
     public void userOrder(){
-        List<OrderResp> orderRespList = orderService.userOrder(9863294692115456l);
+        List<OrderResp> orderRespList = orderService.orderStatus(9863294692115456l);
         log.info(orderRespList.toString());
+    }
+    @Test
+    public void list(){
+        OrderReq orderReq=new OrderReq();
+        orderReq.setPage(0);
+        orderReq.setSize(3);
+        PageResp<OrderResp> pageResp = orderService.list(orderReq);
+        log.info(pageResp.toString());
     }
 }

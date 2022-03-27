@@ -44,4 +44,11 @@ public class UserController {
         userService.userDel(userId);
         return resp;
     }
+    @GetMapping ("/integral/{userId}")
+    public CommonResp integral(@PathVariable Long userId){
+        CommonResp resp=new CommonResp();
+        Integer integral = userService.integral(userId);
+        resp.setContent(integral);
+        return resp;
+    }
 }
