@@ -24,7 +24,7 @@ spring:
     port: 6379
     timeout: 500
 SSM:
-  appid: 1400602862
-  appkey: "f44bfe9a1f1dc1a391cd590de5773c95"
-  smsSign: "春波影照"
-  templateId: 1221073
+  appid: xx
+  appkey: xxx
+  smsSign: "xxx"
+  templateId: xx
